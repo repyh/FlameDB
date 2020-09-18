@@ -71,13 +71,12 @@ class FireDB {
       })
     }
   }
-  async get(path, data) {
+  async get(path) {
     if(!path) throw new Error("Found no path")
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
     let document = fullPath[1];
-    if(!data) throw new Error("Value required")
     const query = await db.collection(collection).doc(document).get();
     if(!query.exists) {
       throw new Error("Collection doesn't exists")
