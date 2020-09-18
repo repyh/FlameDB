@@ -1,30 +1,33 @@
-# hello-express
+# FireDB
+**FireDB** is a simple wrapper for Firebase SDK. **FireDB** only help you connect and write data on your firestore, all data are directly stored into your firestore.
 
-A server that serves a webpage, its resources, and some data
+## Examples
+```javascript
+const FireDB = require("FireDB");
+const db = new FireDB()
+db.authenticate(path-to-service-account) // Authenticate Service Account
 
+db.new("user/hyp3r", {discord: "Hyp3r#0001"}) // User is the collection, Hyp3r is your document. This will create a new collection.
 
-## Your Project
+db.push("user/hyp3r/projects", "FireDB") // User is the collection, Hyp3r is your document, and Projects is your array. This will push "FireDB" in "projects" array.
 
-On the front-end,
+db.get("user/hyp3r") // This will return documents data as an object.
 
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
+db.set("user/hyp3r", {discord: "Hyp3r#0001", alive: true}) // {discord: "Hyp3r#0001", alive: true}
 
-On the back-end,
+db.update("user/hyp3r", {discord: "Hyp3r#1000"}) // {discord: "Hyp3r#0001", alive: true}
+```
 
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+## Connecting to Firebase
+1. Visit [firebase](https://firebase.google.com) and make a new account if you haven't.
+2. Create a new firebase project then go to **Cloud Firestore** then create a database.
+3. Go to **Project Settings** and then click "Service Account" and make a new service account. You will then download a json file.
+4. Copy all content from the json file and store it in your project.
+5. Initialize your database by typing 
+```javascript
+const FireDB = require("FireDB");
+const db = new FireDB()
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
-
-
-## Made by [Glitch](https://glitch.com/)
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-( ᵔ ᴥ ᵔ )
+db.authenticate(path-to-service-account)
+```
+6. You're all done!
