@@ -1,10 +1,10 @@
-# FireDB
-**FireDB** is a simple wrapper for Firebase SDK. **FireDB** only help you connect and write data on your firestore, all data are directly stored into your firestore.
+# FlameDB
+**FlameDB** is a simple wrapper for Firebase SDK. **FlameDB** only help you connect and write data on your firestore, all data are directly stored into your firestore.
 
 ## Examples
 ```javascript
-const FireDB = require("FireDB");
-const db = new FireDB()
+const FlameDB = require("flame.db");
+const db = new FlameDB()
 // Authenticate Service Account
 db.authenticate(path-to-service-account)
 
