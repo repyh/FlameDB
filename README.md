@@ -15,7 +15,7 @@ db.get("user/hyp3r") // This will return documents data as an object.
 
 db.set("user/hyp3r", {discord: "Hyp3r#0001", alive: true}) // {discord: "Hyp3r#0001", alive: true}
 
-db.update("user/hyp3r", {discord: "Hyp3r#1000"}) // {discord: "Hyp3r#0001", alive: true}
+db.update("user/hyp3r", {discord: "Hyp3r#1000"}) // {discord: "Hyp3r#1000", alive: true}
 ```
 
 ## Connecting to Firebase
