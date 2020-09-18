@@ -29,11 +29,15 @@ db.update("user/hyp3r", {discord: "Hyp3r#1000"})
 2. Create a new firebase project then go to **Cloud Firestore** then create a database.
 3. Go to **Project Settings** and then click "Service Account" and make a new service account. You will then download a json file.
 4. Copy all content from the json file and store it in your project.
-5. Initialize your database by typing 
-```javascript
-const FireDB = require("FireDB");
-const db = new FireDB()
-
-db.authenticate(path-to-service-account)
-```
+5. Initialize your database.
 6. You're all done!
+
+## Initialize Database
+```javascript
+const FlameDB = require("flame.db")
+const db = new FlameDB();
+
+db.authenticate("path-to-service-account")
+
+// Code Here
+```
