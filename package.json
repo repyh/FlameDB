@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "A simple wrapper for Firebase SDK",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "start": "node index.js"
   },
+  "author": "Hyp3r",
   "dependencies": {
     "firebase": "^7.21.0",
     "firebase-admin": "^9.1.1"
@@ -14,6 +16,12 @@
     "node": "12.x"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HypeCjho/FireDB.git"
+  },
+  "homepage": "https://github.com/HypeCjho/FireDB#readme",
+  "bugs": "https://github.com/HypeCjho/FireDB/issues",
   "keywords": [
     "node",
     "firebase",
