@@ -1,6 +1,11 @@
 # FlameDB
 **FlameDB** is a simple wrapper for Firebase SDK. **FlameDB** only help you connect and write data on your firestore, all data are directly stored into your firestore.
 
+## Installing
+1. Install [node.js](https://nodejs.org/en/)
+2. run ``npm install flame.db``
+3. You can get started working on your project!
+
 ## Examples
 ```javascript
 const FlameDB = require("flame.db");
