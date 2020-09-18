@@ -79,7 +79,7 @@ class FireDB {
     let document = fullPath[1];
     const query = await db.collection(collection).doc(document).get();
     if(!query.exists) {
-      throw new Error("Collection doesn't exists")
+      return undefined;
     }else{
       return query.data();
     }
