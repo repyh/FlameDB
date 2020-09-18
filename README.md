@@ -15,7 +15,7 @@ db.new("user/hyp3r", {discord: "Hyp3r#0001"})
 db.push("user/hyp3r/projects", "FireDB")
 
 // This will return documents data as an object.
-db.get("user/hyp3r")
+const data = await db.get("user/hyp3r")
 
 // {discord: "Hyp3r#0001", alive: true}
 db.set("user/hyp3r", {discord: "Hyp3r#0001", alive: true})
