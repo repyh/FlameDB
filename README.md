@@ -5,17 +5,23 @@
 ```javascript
 const FireDB = require("FireDB");
 const db = new FireDB()
-db.authenticate(path-to-service-account) // Authenticate Service Account
+// Authenticate Service Account
+db.authenticate(path-to-service-account)
 
-db.new("user/hyp3r", {discord: "Hyp3r#0001"}) // User is the collection, Hyp3r is your document. This will create a new collection.
+// User is the collection, Hyp3r is your document. This will create a new collection.
+db.new("user/hyp3r", {discord: "Hyp3r#0001"})
 
-db.push("user/hyp3r/projects", "FireDB") // User is the collection, Hyp3r is your document, and Projects is your array. This will push "FireDB" in "projects" array.
+// User is the collection, Hyp3r is your document, and Projects is your array. This will push "FireDB" in "projects" array.
+db.push("user/hyp3r/projects", "FireDB")
 
-db.get("user/hyp3r") // This will return documents data as an object.
+// This will return documents data as an object.
+db.get("user/hyp3r")
 
-db.set("user/hyp3r", {discord: "Hyp3r#0001", alive: true}) // {discord: "Hyp3r#0001", alive: true}
+// {discord: "Hyp3r#0001", alive: true}
+db.set("user/hyp3r", {discord: "Hyp3r#0001", alive: true})
 
-db.update("user/hyp3r", {discord: "Hyp3r#1000"}) // {discord: "Hyp3r#1000", alive: true}
+// {discord: "Hyp3r#1000", alive: true}
+db.update("user/hyp3r", {discord: "Hyp3r#1000"})
 ```
 
 ## Connecting to Firebase
