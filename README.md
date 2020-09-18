@@ -20,8 +20,8 @@ const data = await db.get("user/hyp3r")
 // {discord: "Hyp3r#0001", alive: true}
 db.set("user/hyp3r", {discord: "Hyp3r#0001", alive: true})
 
-// {discord: "Hyp3r#1000", alive: true}
-db.update("user/hyp3r", {discord: "Hyp3r#1000"})
+// {discord: "Hyp3r#1000", alive: true, deserveStar: true}
+db.update("user/hyp3r", {discord: "Hyp3r#1000", deserveStar: true})
 ```
 
 ## Connecting to Firebase
