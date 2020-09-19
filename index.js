@@ -8,6 +8,17 @@ class FireDB {
       credential: admin.credential.cert(serviceAccount)
     })
   }
+  async getCollection(collection) {
+    let db = admin.firestore();
+    if(!collection) throw new Error("Missing Collection");
+    const query = await db.collection(collection).get();
+    let documents = [];
+    if(!query.size) return undefined;
+    query.forEach(q => {
+      documents.push({id: q.id, data: q.data});
+    })
+    return documents;
+  }
   async update(path, data = {}) {
     if(!path) throw new Error("Found no path");
     if (typeof path !== 'string') 
