@@ -1,12 +1,34 @@
-const firebase = require('firebase/app')
-const FieldValue = require('firebase-admin').firestore.FieldValue
-const admin = require('firebase-admin')
+const firebase = require('firebase/app');
+const FieldValue = require('firebase-admin').firestore.FieldValue;
+const admin = require('firebase-admin');
 
-class FireDB {
+function emitter() {
+  if(this.Events[this.Event]) for (let e of this.Events[this.Event]) {
+    e();
+  }
+}
+
+class FlameDB { // bntr
+  on(event, listener) {
+    if (typeof listener !== "function") throw new Error("Listener can only be a function");
+    if (typeof event    !== "string"  ) throw new Error("Event isn't a type of string");  //kalo manggil: baca line 30 ama 31
+    
+    if (!this.Events) this.Events = {};
+    
+    if (!this.Events[event]) this.Events[event] = [];
+    
+    this.Events[event].push(listener);
+  }
   authenticate(serviceAccount) {
-    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount)
-    })
+    try {
+      admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount)
+      });
+      if (!this.Events) this.Events = {};
+      emitter.bind({ Events: this.Events, Event: "connected" })();
+    } catch(e) {
+      throw new Error(e);
+    }
   }
   async getCollection(collection) {
     let db = admin.firestore();
@@ -17,17 +39,16 @@ class FireDB {
     query.forEach(q => {
       documents.push({id: q.id, data: q.data});
     })
-    return documents;
+    return documents
   }
-  async update(path, data = {}) {
-    if(!path) throw new Error("Found no path");
-    if (typeof path !== 'string') 
-      throw new Error('Invalid path type');
+  async update(path, data) {
+    if(!path) throw new Error("Found no path")
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
     let document = fullPath[1];
     if(!data) throw new Error("Value required")
+    if(typeof data !== 'object') throw new Error("Data isn't an object")
     const query = await db.collection(collection).doc(document).get();
     if(!query.exists) {
       throw new Error("Collection doesn't exists")
@@ -35,15 +56,14 @@ class FireDB {
       db.collection(collection).doc(document).update(data)
     }
   }
-  async set(path, data = {}) {
-    if(!path) throw new Error("Found no path");
-    if (typeof path !== 'string') 
-      throw new Error('Invalid path type');
+  async set(path, data) {
+    if(!path) throw new Error("Found no path")
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
     let document = fullPath[1];
     if(!data) throw new Error("Value required")
+    if(typeof data !== 'object') throw new Error("Data isn't an object")
     const query = await db.collection(collection).doc(document).get();
     if(!query.exists) {
       throw new Error("Collection doesn't exists")
@@ -51,26 +71,19 @@ class FireDB {
       db.collection(collection).doc(document).set(data)
     }
   }
-  async new(path, data = {}) {
-    if(!path) throw new Error("Found no path");
-    if (typeof path !== 'string') 
-      throw new Error('Invalid path type');
+  async create(path, data) {
+    if(!path) throw new Error("Found no path")
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
     let document = fullPath[1];
     if(!data) throw new Error("Value required")
+    if(typeof data !== 'object') throw new Error("Data isn't an object")
     const query = await db.collection(collection).doc(document).get();
-    if(query.exists) {
-      throw new Error("Collection already exists")
-    }else{
-      db.collection(collection).doc(document).set(data)
-    }
+    db.collection(collection).doc(document).set(data)
   }
   async push(path, data) {
-    if(!path) throw new Error("Found no path");
-    if (typeof path !== 'string') 
-      throw new Error('Invalid path type');
+    if(!path) throw new Error("Found no path")
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
@@ -91,20 +104,19 @@ class FireDB {
     }
   }
   async get(path) {
-    if(!path) throw new Error("Found no path");
-    if (typeof path !== 'string') 
-      throw new Error('Invalid path type');
+    if(!path) throw new Error("Found no path")
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
     let document = fullPath[1];
     const query = await db.collection(collection).doc(document).get();
     if(!query.exists) {
-      return undefined;
+      throw new Error("Collection doesn't exists")
+      return;
     }else{
       return query.data();
     }
   }
 }
 
-module.exports = FireDB
+module.exports = FlameDB

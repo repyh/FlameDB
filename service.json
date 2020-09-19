@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cosmic-modmail",
+  "private_key_id": "8d6bf603932fe7f9bb00cf2665b8953e09009f62",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCvwPN6XYTbAkol\nnnxDRaqUgsFBeN7aALWHBZ4RIbgbdB2q60INzOaSXPzmcqcB3D3/NfWJO3d1hyyv\nMv4abhYEKeI4e+MP+GIFcIqHBPfyEuelBWYaevy0uWLVaHIyZqJRTOkoalvlrj6R\n8USTrs1wW5eH0E03T5DY0lebAWaEw10X3lKwFF1WHgHl1pmM+B8bvCdl+QmeDFe/\ndPDmW1aMM5Mo0tJk+PzJxwT+Sa37wykAycgxmDbGS0QG25t4soUdVeS/THGxGvTn\nYlwJY11730Jzaxkk7iK+75rvh4SlJn3j79kXDat+tjw2xJ/x145ariY+xRmcDR8s\nHrA8/waZAgMBAAECggEAI6NDe7eE3gfr0w788YMp4K1W1JjWz2u/Y16fO6gTtfVo\noqTLoxK+WkVivrPW64imRZ7CaA5X3cwIIop7fg5+hl+b0IpGc5GRBrtYS6KVSE/P\nCuY6Wvo/TcIdqVphdZjcJxIqYRiYA82+QEek+TFD1Rmtc0uorKOEooKcYwD4sci5\nhJWK4Rwx1myGjUzXozTAcnQbGj/JNeKmA+ID04p4SPMmqLL3dcTnnzQRvrrv42UI\n8RK9g+/YKOkm0kWsS6BeH7SnAECR1UKIg4a3LZRoaLX3PNIcmvGqscfVAz/C4Tjt\nazGOZ64/JK95sxRiGQtEeuR3uZoRfvvfnZHxKNzvxQKBgQDaA8YP7jESRQUswppc\nk+fUapqGzzy+N0B+sBAYwXkmpkZoax+DRg/txAdtyHzR5moEQGFoPxcJqx2kv3cP\n2eJnRczjHpiiu8BjMyh8Cvlfd/i6cFI0HINNRxeMwiCWx2dVvoNEF4NrX1cIAatq\noRX6mPc44Ml+X47Ic6MmWARROwKBgQDOYC/F88fEEleYZsR5icSIbeOf9yxr9tEq\nq/PKCDaCXAakPgaG1mS580e2IgC+wdIdhoZ+EC7+bx/9B2NXD/AedPwOkzTgPdZd\nRB/HIzJ0RmSOxyQKU7cbciG0sbswCd13UbGEO+G7YBFjlhdk3sODQ3ptGxBBbSDM\n28hoTTwKOwKBgCAaAiYCWrNn+lUW6ofLN42tjMdg6H7Rv+tnnVcn1eD9Bs0FSQSZ\nYmsOPFHL/aUimmW53R3ufEPuMFU75BovaQjv3DVtIeiEYNW6iLGLJCEMl1FMjK4j\nrKnKWAtf4lCRWAPmI4n5NF6xES2aoVT4FzZpI636W3ECPRIDBPj2aNxVAoGBALOT\nGr7Cqza/Rx1Dfv7KlAqqpACTkUG4mLTqvs0zbEruTJEpr4AwmaD8QZAH8mIKQQyT\n+/9BkcKva0Q+43/kTGoUHSeJi977r8Wj+4rJ46MthV5/haq+wXvOSenzJRBd5Slo\nGnEXsgnbRAZFmcGZ3MIhOywo+nITxRC8xZuMaQv1AoGABUnYanu7qAIH4yRUlHYJ\nXfvFIS3EQYV6fN4nr558rSVJAusHwJAX6KFQbrKraBbqa5JUIgW+M89YcByD1FPn\n6SfgtnjPjUS8LA2gfN1tF6/bwSKUuWKnx+YP2CyATf8e2GA7PRuQ40JX/vLCu8w6\nz3ddTWASTNIxIhLC/aAcF7U=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ggbf6@cosmic-modmail.iam.gserviceaccount.com",
+  "client_id": "108892725896684125144",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ggbf6%40cosmic-modmail.iam.gserviceaccount.com"
+}
