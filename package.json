@@ -1,14 +1,13 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "FireDB",
-  "version": "0.0.1",
+  "name": "flame.db",
+  "version": "1.1.5",
   "description": "A simple wrapper for Firebase SDK",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "start": "node index.js"
   },
+  "author": "Hyp3r",
   "dependencies": {
     "firebase": "^7.21.0",
     "firebase-admin": "^9.1.1"
@@ -16,12 +15,18 @@
   "engines": {
     "node": "12.x"
   },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HypeCjho/flame.db.git"
+  },
+  "homepage": "https://cjho88793.gitbook.io/flamedb/",
+  "bugs": "https://github.com/HypeCjho/FireDB/issues",
   "keywords": [
     "node",
-    "firebase"
+    "firebase",
+    "database",
+    "wrapper",
+    "google"
   ]
 }
