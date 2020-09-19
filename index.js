@@ -9,7 +9,9 @@ class FireDB {
     })
   }
   async update(path, data = {}) {
-    if(!path) throw new Error("Found no path")
+    if(!path) throw new Error("Found no path");
+    if (typeof path !== 'string') 
+      throw new Error('Invalid path type');
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
@@ -23,7 +25,9 @@ class FireDB {
     }
   }
   async set(path, data = {}) {
-    if(!path) throw new Error("Found no path")
+    if(!path) throw new Error("Found no path");
+    if (typeof path !== 'string') 
+      throw new Error('Invalid path type');
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
@@ -37,7 +41,9 @@ class FireDB {
     }
   }
   async new(path, data = {}) {
-    if(!path) throw new Error("Found no path")
+    if(!path) throw new Error("Found no path");
+    if (typeof path !== 'string') 
+      throw new Error('Invalid path type');
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
@@ -51,7 +57,9 @@ class FireDB {
     }
   }
   async push(path, data) {
-    if(!path) throw new Error("Found no path")
+    if(!path) throw new Error("Found no path");
+    if (typeof path !== 'string') 
+      throw new Error('Invalid path type');
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
@@ -72,7 +80,9 @@ class FireDB {
     }
   }
   async get(path) {
-    if(!path) throw new Error("Found no path")
+    if(!path) throw new Error("Found no path");
+    if (typeof path !== 'string') 
+      throw new Error('Invalid path type');
     let db = admin.firestore();
     let fullPath = path.split(/\//g);
     let collection = fullPath[0];
