@@ -21,7 +21,7 @@ const db = new FlameDB()
 db.authenticate(path-to-service-account)
 
 // User is the collection, Hyp3r is your document. This will create a new collection.
-db.new("user/hyp3r", {discord: "Hyp3r#0001"})
+db.create("user/hyp3r", {discord: "Hyp3r#0001"})
 
 // User is the collection, Hyp3r is your document, and Projects is your array. This will push "FireDB" in "projects" array.
 db.push("user/hyp3r/projects", "FireDB")
