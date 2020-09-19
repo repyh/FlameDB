@@ -1,30 +1,51 @@
-# hello-express
+# FlameDB
+**FlameDB** is a simple wrapper for Firebase SDK. **FlameDB** only help you connect and write data on your firestore, all data are directly stored into your firestore.
 
-A server that serves a webpage, its resources, and some data
+## Installing
+1. Install [node.js](https://nodejs.org/en/)
+2. run ``npm install flame.db``
+3. You can get started working on your project!
 
+# Docs
+You can find the documentation [here](https://cjho88793.gitbook.io/flamedb/)
 
-## Your Project
+## Examples
+```javascript
+const FlameDB = require("flame.db");
+const db = new FlameDB()
+// Authenticate Service Account
+db.authenticate(path-to-service-account)
 
-On the front-end,
+// User is the collection, Hyp3r is your document. This will create a new collection.
+db.new("user/hyp3r", {discord: "Hyp3r#0001"})
 
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
+// User is the collection, Hyp3r is your document, and Projects is your array. This will push "FireDB" in "projects" array.
+db.push("user/hyp3r/projects", "FireDB")
 
-On the back-end,
+// This will return documents data as an object.
+const data = await db.get("user/hyp3r")
 
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+// {discord: "Hyp3r#0001", alive: true}
+db.set("user/hyp3r", {discord: "Hyp3r#0001", alive: true})
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
+// {discord: "Hyp3r#1000", alive: true}
+db.update("user/hyp3r", {discord: "Hyp3r#1000"})
+```
 
+## Connecting to Firebase
+1. Visit [firebase](https://firebase.google.com) and make a new account if you haven't.
+2. Create a new firebase project then go to **Cloud Firestore** then create a database.
+3. Go to **Project Settings** and then click "Service Account" and make a new service account. You will then download a json file.
+4. Copy all content from the json file and store it in your project.
+5. Initialize your database.
+6. You're all done!
 
-## Made by [Glitch](https://glitch.com/)
+## Initialize Database
+```javascript
+const FlameDB = require("flame.db")
+const db = new FlameDB();
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+db.authenticate("path-to-service-account")
 
-Find out more [about Glitch](https://glitch.com/about).
-
-( ᵔ ᴥ ᵔ )
+// Code Here
+```
