@@ -9,6 +9,10 @@
 # Docs
 You can find the documentation [here](https://cjho88793.gitbook.io/flamedb/)
 
+## Changelog
+- Changed `.new()` into `.create()`
+- Added event emitter
+
 ## Examples
 ```javascript
 const FlameDB = require("flame.db");
