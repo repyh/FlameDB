@@ -1,5 +1,5 @@
 {
-  "name": "fire.db",
+  "name": "flame.db",
   "version": "1.0.0",
   "description": "A simple wrapper for Firebase SDK",
   "main": "index.js",
@@ -28,5 +28,7 @@
     "database",
     "wrapper",
     "google"
-  ]
+  ],
+  "typings": "index.d.ts"
 }
+
